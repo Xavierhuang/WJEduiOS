@@ -1,0 +1,6 @@
+framework module Pods_WJEduiOS {
+  umbrella header "Pods-WJEduiOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
