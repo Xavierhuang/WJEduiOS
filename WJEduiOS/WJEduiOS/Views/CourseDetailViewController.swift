@@ -146,13 +146,14 @@ class CourseDetailViewController: UIViewController {
         playerView.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
 //        let movieURL = URL(string:"http://flv2.bn.netease.com/videolib3/1701/24/eXOLU3162/HD/eXOLU3162-mobile.mp4")
 //        let url = URL(string:"http://flv2.bn.netease.com/videolib3/1701/24/eXOLU3162/HD/eXOLU3162-mobile.mp4")
-
 //
 //        if let movieURL = url {
 //            self.player = AVPlayer(url: movieURL)
 //        }
-        let movieURL = Bundle.main.url(forResource: "ElephantSeals", withExtension: "mov")!
-        asset = AVURLAsset(url: movieURL, options: nil)
+        let movieURL = NSURL.init(string: "http://47.91.152.161/root/video/java.mp4") //NSURL.init(string: "http://yyxb.082818.com/xietong/upload/image/201701/d341a9d3-c320-4243-9f07-8c33438d6e31.mp4")
+            //Bundle.main.url(forResource: "ElephantSeals", withExtension: "mov")!
+        //http://47.91.152.161/root/video/java.mp4
+        asset = AVURLAsset(url: movieURL as! URL, options: nil)
          NSLog("screenBounds.width === %f", playerView.playerLayer.frame.width)
 //        NSLog("play frame == %@", playerView.playerLayer.frame)
         // Make sure we don't have a strong reference cycle by only capturing self as weak.

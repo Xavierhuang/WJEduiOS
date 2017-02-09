@@ -19,9 +19,8 @@ let appendedParams: Dictionary<String, AnyObject> = [
     "uid": "123456" as AnyObject
 ]
 
-
-
 let endpointClosure = { (target: ApiService) -> Endpoint<ApiService> in
+    
     let url = target.baseURL.appendingPathComponent(target.path).absoluteString
     return Endpoint(url: url, sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters)
         .adding(newParameters: appendedParams)
@@ -30,7 +29,6 @@ let endpointClosure = { (target: ApiService) -> Endpoint<ApiService> in
 }
 
 let apiProvider = RxMoyaProvider<ApiService>(endpointClosure: endpointClosure)
-
 
 enum ApiService {
     case Login(phone: String, vcode: String)

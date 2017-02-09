@@ -29,6 +29,7 @@ class CourseTypeViewController: UIViewController,UICollectionViewDelegate,UIColl
         collectionView.dataSource = self
         rootLayout.addSubview(collectionView)
         collectionView.register(UINib.init(nibName: "CourseTypeViewCell", bundle: nil), forCellWithReuseIdentifier: "CourseTypeViewCell")
+        collectionView.register(UINib.init(nibName: "CourseTypeHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "CourseTypeHeaderView")
     }
     
     override func viewDidLoad() {
@@ -63,6 +64,7 @@ class CourseTypeViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView .dequeueReusableCell(withReuseIdentifier: "CourseTypeViewCell", for: indexPath)
+        cell.backgroundColor = UIColor.white
         return cell
     }
     
@@ -72,9 +74,27 @@ class CourseTypeViewController: UIViewController,UICollectionViewDelegate,UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: (screenBounds.width - 50 ) / 3, height: (screenBounds.width - 50 )/3)
+        return CGSize.init(width: (screenBounds.width) / 3, height: 100)
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "CourseTypeHeaderView", for: indexPath)
+        headerView.backgroundColor = UIColor.white
+        return headerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize.init(width: 0, height: 10)
+    }
 }
 
 extension CourseTypeViewController:NavigationP{
@@ -84,5 +104,4 @@ extension CourseTypeViewController:NavigationP{
     func rightBarButtonAction(_ sender: AnyObject){
         self.navigationController!.popViewController(animated: true)
     }
-    
 }

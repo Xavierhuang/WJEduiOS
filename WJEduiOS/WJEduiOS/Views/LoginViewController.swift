@@ -202,8 +202,10 @@ class LoginViewController: UIViewController,LoginViewInterface {
 //        let mainTabbarViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabbarViewController") as! MainTabbarViewController
 //        
 //        let window = UIApplication.shared.delegate?.window
-//        
+//
 //        window!!.rootViewController = mainTabbarViewController
+        
+    
         
         //eventHandler?.toNextViewController(viewTag:sender.tag)
         let appDependencies = AppDependencies()
