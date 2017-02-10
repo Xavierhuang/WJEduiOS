@@ -30,7 +30,13 @@ class CourseTitleTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
+        if selected == true {
+            self.infoTitle.textColor = AppPlist.selectedBlueColor
+             self.timelabel.textColor = AppPlist.selectedBlueColor
+        } else {
+            self.infoTitle.textColor = CFTool.color(4)
+            self.timelabel.textColor = CFTool.color(4)
+        }
     }
     
     //对于需要动态评估高度的UITableViewCell来说可以把布局视图暴露出来。用于高度评估和边界线处理。以及事件处理的设置。

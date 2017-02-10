@@ -37,7 +37,7 @@ public func percentWidth(_ width: CGFloat) -> CGFloat{
 
 struct AppPlist {
     
-    
+    //background Color 
     static let mainViewBgColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
     static let mainTabBarBgColor = UIColor(red: 52/255, green: 57/255, blue: 75/255, alpha: 1)
     static let mainDackViewBgColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
@@ -47,7 +47,7 @@ struct AppPlist {
     static let mainThemeColor = UIColor(red: 52/255, green: 57/255, blue: 75/255, alpha: 1)
     static let userNameColor = UIColor(red: 163/255, green: 163/255, blue: 170/255, alpha: 1)
     static let lineColor = UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1)
-    
+    static let selectedBlueColor = UIColor(red: 80/255, green: 178/255, blue: 245/255, alpha: 1) //选中蓝色
     static let disTributeViewTextDefaultColor = UIColor(red: 70/255, green: 70/255, blue: 70/255, alpha: 1)
     static let disTributeViewButtonDefaultColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
     static let deleteBottomBgColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)

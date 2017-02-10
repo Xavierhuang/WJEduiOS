@@ -46,16 +46,16 @@ class CourseDetailController: UIViewController {
         orderCollectionView.tg_width.equal(.fill)
         orderCollectionView.tg_top.equal(TGDimeAdapter.height(15))
         orderCollectionView.backgroundColor = AppPlist.mainViewBgColor
-        rootLayout.addSubview(orderCollectionView)
         orderCollectionView.delegate = self
         orderCollectionView.dataSource = self
-    
+
+        rootLayout.addSubview(orderCollectionView)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.changeBackButton(#selector(self.rightBarButtonAction(_:)), title:"课程" ,viewController: self)
-        orderCollectionView .register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+        orderCollectionView .register(UINib.init(nibName: "CourseInfoCell", bundle: nil), forCellWithReuseIdentifier: "CourseInfoCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -148,7 +148,7 @@ extension CourseDetailController
     
 }
 
-extension CourseDetailController:UICollectionViewDelegate,UICollectionViewDataSource
+extension CourseDetailController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 {
     
     func handleTap(sender:TGBaseLayout)
@@ -172,13 +172,18 @@ extension CourseDetailController:UICollectionViewDelegate,UICollectionViewDataSo
         return 10
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseInfoCell", for: indexPath) as! CourseInfoCell
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: (screenBounds.width - 20) * 0.5 , height: 180)
+    }
     
 }
 

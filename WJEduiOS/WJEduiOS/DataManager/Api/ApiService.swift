@@ -31,6 +31,7 @@ let endpointClosure = { (target: ApiService) -> Endpoint<ApiService> in
 let apiProvider = RxMoyaProvider<ApiService>(endpointClosure: endpointClosure)
 
 enum ApiService {
+    
     case Login(phone: String, vcode: String)
     case GetVcode(phone: String)
     case Logout()
@@ -56,6 +57,7 @@ enum ApiService {
     case changeCartGoodNum(cartid:Int64,apitype:Int,openid:String,userid:Int64)
     case deleteCartGoodNum(cartid:Int64,openid:String,userid:Int64)
     
+    case getCourseType()
 }
 
 extension ApiService: TargetType {
@@ -126,6 +128,8 @@ extension ApiService: TargetType {
             return "cart/appchangenum"
         case .deleteCartGoodNum(_,_,_):
             return "cart/appdeletecartgood"
+        case .getCourseType :
+         return  "/edu/public/typeall"
         }
     }
     
@@ -204,6 +208,8 @@ extension ApiService: TargetType {
             return  EncryptParas(["cartid":cartid,"openid":openid,"userid":userid],devicetype:"app")
         case .Logout(_):
             return nil
+        case .getCourseType :
+            return  nil
         }
         
     
@@ -225,6 +231,8 @@ extension ApiService: TargetType {
         case .yhCodeExchange(_,_,_),.createOrderByCart(_,_,_,_,_,_),.orderListBytype(_,_,_),.orderDetailBySn(_,_):
             return "Success".data(using: .utf8)!
         case .changeCartGoodNum(_,_,_,_),.deleteCartGoodNum(_,_,_):
+            return "Success".data(using: .utf8)!
+        case .getCourseType :
             return "Success".data(using: .utf8)!
         }
     }

@@ -50,7 +50,7 @@ struct AppConfiguration {
     }
     
     struct WinsharesApp {
-        static let serviceBaseUrl = "https://api.winshares.cn/api/"
+        static let serviceBaseUrl = "http://47.90.92.155"//"https://api.winshares.cn/api/"
         static let desKey = "api.winshares.cn/pego?#@"
         static let baseImageUrl = "http://qapi.winshares.cn/"
         static let appBaseUrl = "http://m.winshares.cn/app.html?#/"

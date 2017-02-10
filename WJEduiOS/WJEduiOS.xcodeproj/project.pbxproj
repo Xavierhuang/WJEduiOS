@@ -140,10 +140,14 @@
 		EB120F821E49B37C005858DD /* RegisterCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB120F801E49B37C005858DD /* RegisterCodeViewController.xib */; };
 		EB120F851E49CCA3005858DD /* ForgetPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB120F831E49CCA3005858DD /* ForgetPwdViewController.swift */; };
 		EB120F861E49CCA3005858DD /* ForgetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB120F841E49CCA3005858DD /* ForgetPwdViewController.xib */; };
+		EB75A1931E4C739D006E6B47 /* CourseInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB75A1911E4C739C006E6B47 /* CourseInfoCell.swift */; };
+		EB75A1941E4C739D006E6B47 /* CourseInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB75A1921E4C739D006E6B47 /* CourseInfoCell.xib */; };
 		EBD554101E4AEDF30003EAA5 /* CourseTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5540F1E4AEDF30003EAA5 /* CourseTypeViewController.swift */; };
 		EBD554131E4B10D20003EAA5 /* CourseTypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD554111E4B10D20003EAA5 /* CourseTypeViewCell.swift */; };
 		EBD554141E4B10D20003EAA5 /* CourseTypeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBD554121E4B10D20003EAA5 /* CourseTypeViewCell.xib */; };
 		EBE2967A1E4B281100D01FE4 /* CourseDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE296791E4B281000D01FE4 /* CourseDetailController.swift */; };
+		EBE2967D1E4C540600D01FE4 /* CourseTypeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2967B1E4C540600D01FE4 /* CourseTypeHeaderView.swift */; };
+		EBE2967E1E4C540600D01FE4 /* CourseTypeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE2967C1E4C540600D01FE4 /* CourseTypeHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -392,10 +396,14 @@
 		EB120F801E49B37C005858DD /* RegisterCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterCodeViewController.xib; sourceTree = "<group>"; };
 		EB120F831E49CCA3005858DD /* ForgetPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPwdViewController.swift; sourceTree = "<group>"; };
 		EB120F841E49CCA3005858DD /* ForgetPwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPwdViewController.xib; sourceTree = "<group>"; };
+		EB75A1911E4C739C006E6B47 /* CourseInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseInfoCell.swift; sourceTree = "<group>"; };
+		EB75A1921E4C739D006E6B47 /* CourseInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseInfoCell.xib; sourceTree = "<group>"; };
 		EBD5540F1E4AEDF30003EAA5 /* CourseTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTypeViewController.swift; sourceTree = "<group>"; };
 		EBD554111E4B10D20003EAA5 /* CourseTypeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTypeViewCell.swift; sourceTree = "<group>"; };
 		EBD554121E4B10D20003EAA5 /* CourseTypeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTypeViewCell.xib; sourceTree = "<group>"; };
 		EBE296791E4B281000D01FE4 /* CourseDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailController.swift; sourceTree = "<group>"; };
+		EBE2967B1E4C540600D01FE4 /* CourseTypeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTypeHeaderView.swift; sourceTree = "<group>"; };
+		EBE2967C1E4C540600D01FE4 /* CourseTypeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTypeHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -812,6 +820,8 @@
 				D16500F31E3863CC00ACE0AB /* UserCommentTableViewCell.swift */,
 				D154BD4B1E38AA8D0086159E /* UserQuestListView.swift */,
 				D154BD4D1E38ACE00086159E /* UserQuestionTableViewCell.swift */,
+				EB75A1911E4C739C006E6B47 /* CourseInfoCell.swift */,
+				EB75A1921E4C739D006E6B47 /* CourseInfoCell.xib */,
 			);
 			path = customerViews;
 			sourceTree = "<group>";
@@ -895,6 +905,8 @@
 			children = (
 				EBD554111E4B10D20003EAA5 /* CourseTypeViewCell.swift */,
 				EBD554121E4B10D20003EAA5 /* CourseTypeViewCell.xib */,
+				EBE2967B1E4C540600D01FE4 /* CourseTypeHeaderView.swift */,
+				EBE2967C1E4C540600D01FE4 /* CourseTypeHeaderView.xib */,
 				EBD5540F1E4AEDF30003EAA5 /* CourseTypeViewController.swift */,
 				EBE296791E4B281000D01FE4 /* CourseDetailController.swift */,
 			);
@@ -1015,6 +1027,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB75A1941E4C739D006E6B47 /* CourseInfoCell.xib in Resources */,
 				EB120F7C1E499758005858DD /* RegisterViewController.xib in Resources */,
 				EBD554141E4B10D20003EAA5 /* CourseTypeViewCell.xib in Resources */,
 				D16E94111E363A260033C7AD /* PlayerControlView.xib in Resources */,
@@ -1027,6 +1040,7 @@
 				D1B445D81DE6C5D0008AAABC /* Assets.xcassets in Resources */,
 				D11903EF1E1D3CD3002B1AC2 /* topscrollimage.png in Resources */,
 				D18446641E18DFE700534795 /* AlipaySDK.bundle in Resources */,
+				EBE2967E1E4C540600D01FE4 /* CourseTypeHeaderView.xib in Resources */,
 				D1B445D61DE6C5D0008AAABC /* Main.storyboard in Resources */,
 				D12B723B1E2A854800B4ED79 /* nouserheadimg.png in Resources */,
 			);
@@ -1208,11 +1222,13 @@
 				D18446761E18DFE700534795 /* TGLayoutPos.swift in Sources */,
 				D18446701E18DFE700534795 /* TangramKit.swift in Sources */,
 				D1914D741E37A0080017201C /* CourseTitleListView.swift in Sources */,
+				EBE2967D1E4C540600D01FE4 /* CourseTypeHeaderView.swift in Sources */,
 				D175A1631DE8A0D100037768 /* AppDependencies.swift in Sources */,
 				D18446791E18DFE700534795 /* TGLinearLayout.swift in Sources */,
 				D18446841E18E1C900534795 /* UIExtension.swift in Sources */,
 				D16E93FD1E35AF180033C7AD /* CourseDetailViewController.swift in Sources */,
 				D18446A71E18E60900534795 /* UIScrollAndTabView.swift in Sources */,
+				EB75A1931E4C739D006E6B47 /* CourseInfoCell.swift in Sources */,
 				D16500F41E3863CC00ACE0AB /* UserCommentTableViewCell.swift in Sources */,
 				D18446CF1E18F2F200534795 /* CySocityViewController.swift in Sources */,
 				D175A1491DE891BB00037768 /* LoginPresenter.swift in Sources */,

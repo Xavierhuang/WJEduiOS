@@ -13,13 +13,18 @@ protocol CourseDetailViewInterface: class {
     
     //    func showNoContentScreen()
 }
+
+//var  slected:NSInteger  自动选中第一个
+
 private var CourseDetailViewControllerKVOContext = 0
 class CourseDetailViewController: UIViewController {
+    
     
     var rootLayout : TGLinearLayout!
     var bottomScrollView:UIScrollView!
     var rootVideoView : PlayerView?
     var tabindexSelect : TabIndexSelect?
+    var isFullscreenMode : Bool!
 //    /// 正在播放视频的URL
 //    var playingNewsUrl: String = ""
 //    /// 正在播放视频的播放器
@@ -104,7 +109,11 @@ class CourseDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Moya
+//        let productList =  ApiService.getCourseType()
+//        NSLog("productList: \(productList)")
+        //http://47.90.92.155/edu/public/typeall
+        
         // Do any additional setup after loading the view.
 //        playingPlayerView = WLVideoPlayerView(url: URL(string: "http://flv2.bn.netease.com/videolib3/1701/23/YHFSu4496/HD/YHFSu4496-mobile.mp4"))
 //        playingPlayerView?.customControlView = controlView
@@ -150,9 +159,9 @@ class CourseDetailViewController: UIViewController {
 //        if let movieURL = url {
 //            self.player = AVPlayer(url: movieURL)
 //        }
-        let movieURL = NSURL.init(string: "http://47.91.152.161/root/video/java.mp4") //NSURL.init(string: "http://yyxb.082818.com/xietong/upload/image/201701/d341a9d3-c320-4243-9f07-8c33438d6e31.mp4")
+        let movieURL = NSURL.init(string: "47.90.92.155/edu/public/video")
+        
             //Bundle.main.url(forResource: "ElephantSeals", withExtension: "mov")!
-        //http://47.91.152.161/root/video/java.mp4
         asset = AVURLAsset(url: movieURL as! URL, options: nil)
          NSLog("screenBounds.width === %f", playerView.playerLayer.frame.width)
 //        NSLog("play frame == %@", playerView.playerLayer.frame)
@@ -395,6 +404,8 @@ extension CourseDetailViewController:NavigationP,TabIndexClick,UIScrollViewDeleg
             switch i {
             case 0:
                 let courseTitleListView = CourseTitleListView(frame: CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.width))
+                //默认选中第一个
+                courseTitleListView.titleListView.selectRow(at: (NSIndexPath.init(row: 0, section: 0)) as IndexPath, animated:false, scrollPosition: .none)
                 view.addSubview(courseTitleListView)
                 break
             case 1:
@@ -436,7 +447,6 @@ extension CourseDetailViewController:NavigationP,TabIndexClick,UIScrollViewDeleg
         rootVideoView = PlayerView()
         //        imageView.tg_height.equal(100%)   //图片视图占用剩余的高度。
         rootVideoView!.tg_width.equal(100%)
-        
         rootVideoView!.tg_height.equal(TGDimeAdapter.height(220))
         rootVideoView!.backgroundColor = CFTool.color(3)
         
@@ -474,6 +484,7 @@ extension CourseDetailViewController:NavigationP,TabIndexClick,UIScrollViewDeleg
             button.tg_centerY.equal(0)
             button.setImage(UIImage(named:"player_fullscreen"), for: .normal)
             bottomLayout.addSubview(button)
+            button.addTarget(self, action: #selector(fullScreenClick), for: .touchUpInside)
             return button
         }()
     
@@ -562,6 +573,8 @@ extension CourseDetailViewController:NavigationP,TabIndexClick,UIScrollViewDeleg
     }
 
     
+    //MARK: Actions
+    
     func buttonWasPressed(_ sender: UIButton) {
         switch sender.tag {
         case 201:
@@ -580,6 +593,19 @@ extension CourseDetailViewController:NavigationP,TabIndexClick,UIScrollViewDeleg
             break
         default:
             break
+        }
+    }
+    
+    func fullScreenClick(sender:UIButton) -> Void {
+         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+        
+//        playerView.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI_2))
+//            rootVideoView?.tg_height.equal(screenBounds.width)
+//            rootVideoView?.tg_width.equal(screenBounds.height)
+//        } else {
+////        rootVideoView?.tg_height.equal(screenBounds.height)
+//
         }
     }
 }

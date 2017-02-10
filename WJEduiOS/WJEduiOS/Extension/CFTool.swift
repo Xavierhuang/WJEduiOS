@@ -14,7 +14,7 @@ class CFTool: NSObject {
     class func color(_ idx:Int)->UIColor
     {
         let colors:[[Int]] = [
-            [0xED,0xED,0xED],   //0
+            [0xED,0xED,0xED],   //0  
             [0xFE,0xCE,0xA8],   //1
             [0xFF,0x84,0x7C],   //2
             [0xE8,0x4a,0x5f],   //3

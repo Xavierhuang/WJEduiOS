@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class CourseTitleListView: UIView {
 
     /*
@@ -89,7 +91,7 @@ extension CourseTitleListView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:CourseTitleTableViewCell = tableView.dequeueReusableCell(withIdentifier: courseTitleTableViewCell) as! CourseTitleTableViewCell
         cell.setModel(infotext:  AppPlist.CourseTextList.CourseTitleList[indexPath.section][indexPath.row],timetext: AppPlist.CourseTextList.CourseTimeList[indexPath.section][indexPath.row])
-        
+        cell.selectionStyle = .none;
         return cell;
         
     }
@@ -119,7 +121,7 @@ extension CourseTitleListView:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRow(at: indexPath, animated: false)
+//        tableView.deselectRow(at: indexPath, animated: false)
        // eventHandler?.toNextViewController(sessionIndex:indexPath.section,rowIndex:indexPath.row)
         
         
